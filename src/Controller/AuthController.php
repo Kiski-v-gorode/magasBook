@@ -19,7 +19,9 @@ class AuthController extends AbstractController
     }
 
     #[Route(path: '/api/v1/auth/signUp', methods: ['POST'])]
-    #[OA\Response(response: 200, description: 'Signs up a user',
+    #[OA\Response(
+        response: 200,
+        description: 'Signs up a user',
         content: new OA\JsonContent(properties: [
             new OA\Property(property: 'token', type: 'string'),
             new OA\Property(property: 'refresh_token', type: 'string')])

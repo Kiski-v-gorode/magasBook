@@ -19,8 +19,8 @@ class BookController extends AbstractController
 {
     public function __construct(
         private readonly BookService $bookService,
-        private readonly BookContentService $bookContentService)
-    {
+        private readonly BookContentService $bookContentService
+    ) {
     }
 
     #[Route(path: '/api/v1/category/{id}/books', methods: ['GET'])]
@@ -45,7 +45,8 @@ class BookController extends AbstractController
     public function chapterContent(Request $request, int $chapterId, int $id): Response
     {
         return $this->json($this->bookContentService->getPublishedContent(
-            $chapterId, (int) $request->query->get('page', 1)
+            $chapterId,
+            (int) $request->query->get('page', 1)
         ));
     }
 }

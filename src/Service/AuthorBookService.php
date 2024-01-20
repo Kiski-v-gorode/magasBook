@@ -29,8 +29,8 @@ class AuthorBookService
         private readonly BookFormatRepository $bookFormatRepository,
         private readonly BookCategoryRepository $bookCategoryRepository,
         private readonly SluggerInterface $slugger,
-        private readonly UploadService $uploadService)
-    {
+        private readonly UploadService $uploadService
+    ) {
     }
 
     public function uploadCover(int $id, UploadedFile $file): UploadCoverResponse
@@ -53,8 +53,10 @@ class AuthorBookService
     public function getBooks(UserInterface $user): BookListResponse
     {
         return new BookListResponse(
-            array_map($this->map(...),
-                $this->bookRepository->findUserBooks($user))
+            array_map(
+                $this->map(...),
+                $this->bookRepository->findUserBooks($user)
+            )
         );
     }
 

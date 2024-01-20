@@ -23,7 +23,8 @@ class ReviewController extends AbstractController
     public function reviews(int $id, Request $request): Response
     {
         return $this->json($this->reviewService->getReviewPageByBookId(
-            $id, $request->query->get('page', 1)
+            $id,
+            $request->query->get('page', 1)
         ));
     }
 }

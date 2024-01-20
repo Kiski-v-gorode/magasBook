@@ -16,8 +16,8 @@ class BookContentService
 
     public function __construct(
         private readonly BookContentRepository $bookContentRepository,
-        private readonly BookChapterRepository $bookChapterRepository)
-    {
+        private readonly BookChapterRepository $bookChapterRepository
+    ) {
     }
 
     public function createContent(CreateBookChapterContentRequest $request, int $chapterId): IdResponse

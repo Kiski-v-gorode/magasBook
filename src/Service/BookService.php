@@ -17,8 +17,8 @@ class BookService
         private readonly BookRepository $bookRepository,
         private readonly BookCategoryRepository $bookCategoryRepository,
         private readonly BookChapterService $bookChapterService,
-        private readonly RatingService $ratingService)
-    {
+        private readonly RatingService $ratingService
+    ) {
     }
 
     public function getBooksByCategory(int $categoryId): BookListResponse

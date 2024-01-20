@@ -35,7 +35,7 @@ class ReviewRepository extends ServiceEntityRepository
     /**
      * @return \Traversable&\Countable
      */
-    public function getPageByBookId(int $id, int $offset, int $limit)
+    public function getPageByBookId(int $id, int $offset, int $limit): (\Countable&\Traversable)|Paginator
     {
         $query = $this->_em
             ->createQuery('SELECT r FROM App\Entity\Review r WHERE r.book = :id ORDER BY r.createdAt DESC')

@@ -31,7 +31,9 @@ class BookMapper
     {
         return $book->getCategories()
             ->map(fn (BookCategory $bookCategory) => new BookCategoryModel(
-                $bookCategory->getId(), $bookCategory->getTitle(), $bookCategory->getSlug()
+                $bookCategory->getId(),
+                $bookCategory->getTitle(),
+                $bookCategory->getSlug()
             ))
             ->toArray();
     }
@@ -48,7 +50,8 @@ class BookMapper
                 ->setDescription($formatJoin->getFormat()->getDescription())
                 ->setComment($formatJoin->getFormat()->getComment())
                 ->setPrice($formatJoin->getPrice())
-                ->setDiscountPercent($formatJoin->getDiscountPercent()
+                ->setDiscountPercent(
+                    $formatJoin->getDiscountPercent()
                 ))
             ->toArray();
     }

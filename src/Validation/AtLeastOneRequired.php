@@ -26,8 +26,8 @@ class AtLeastOneRequired extends Constraint
         array $requiredFields = null,
         string $message = null,
         array $groups = null,
-        $payload = null)
-    {
+        $payload = null
+    ) {
         if (!empty($options) && array_is_list($options)) {
             $requiredFields ??= $options;
             $options = [];

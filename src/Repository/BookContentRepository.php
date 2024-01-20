@@ -36,7 +36,7 @@ class BookContentRepository extends ServiceEntityRepository
     /**
      * @return \Traversable&\Countable
      */
-    public function getPageByChapterId(int $id, bool $onlyPublished, int $offset, int $limit)
+    public function getPageByChapterId(int $id, bool $onlyPublished, int $offset, int $limit): (\Countable&\Traversable)|Paginator
     {
         $query = implode(' ', array_filter([
             'SELECT b FROM App\Entity\BookContent b WHERE b.chapter = :id',

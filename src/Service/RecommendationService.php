@@ -15,8 +15,8 @@ class RecommendationService
 
     public function __construct(
         private readonly BookRepository $bookRepository,
-        private readonly RecommendationApiService $recommendationApiService)
-    {
+        private readonly RecommendationApiService $recommendationApiService
+    ) {
     }
 
     public function getRecommendationsByBookId(int $id): RecommendedBookListResponse

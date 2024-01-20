@@ -15,8 +15,8 @@ class SignUpService
     public function __construct(
         private readonly UserPasswordHasherInterface $hasher,
         private readonly UserRepository $userRepository,
-        private readonly AuthenticationSuccessHandler $successHandler)
-    {
+        private readonly AuthenticationSuccessHandler $successHandler
+    ) {
     }
 
     public function signUp(SignUpRequest $signUpRequest): Response

@@ -26,8 +26,8 @@ class AuthorBookChapterService
         private readonly BookRepository $bookRepository,
         private readonly BookChapterRepository $bookChapterRepository,
         private readonly BookChapterService $bookChapterService,
-        private readonly SluggerInterface $slugger)
-    {
+        private readonly SluggerInterface $slugger
+    ) {
     }
 
     public function createChapter(CreateBookChapterRequest $request, int $bookId): IdResponse

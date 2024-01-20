@@ -16,8 +16,8 @@ class BookCategoryService
 {
     public function __construct(
         private readonly BookCategoryRepository $bookCategoryRepository,
-        private readonly SluggerInterface $slugger)
-    {
+        private readonly SluggerInterface $slugger
+    ) {
     }
 
     public function deleteCategory(int $id): void
@@ -50,7 +50,9 @@ class BookCategoryService
         $categories = $this->bookCategoryRepository->findAllSortedByTitle();
         $items = array_map(
             fn (BookCategory $bookCategory) => new BookCategoryModel(
-                $bookCategory->getId(), $bookCategory->getTitle(), $bookCategory->getSlug()
+                $bookCategory->getId(),
+                $bookCategory->getTitle(),
+                $bookCategory->getSlug()
             ),
             $categories
         );

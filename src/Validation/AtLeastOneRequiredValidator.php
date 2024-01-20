@@ -17,7 +17,7 @@ class AtLeastOneRequiredValidator extends ConstraintValidator
         $this->propertyAccessor = $propertyAccessor ?? PropertyAccess::createPropertyAccessor();
     }
 
-    public function validate(mixed $object, Constraint $constraint)
+    public function validate(mixed $object, Constraint $constraint): void
     {
         if (!$constraint instanceof AtLeastOneRequired) {
             throw new UnexpectedTypeException($constraint, AtLeastOneRequired::class);
