@@ -66,4 +66,5 @@ class AdminController extends AbstractController
 
         return $this->json(null);
     }
+
 }
