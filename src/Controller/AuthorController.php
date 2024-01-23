@@ -61,7 +61,7 @@ class AuthorController extends AbstractController
         return $this->json($this->authorService->uploadCover($id, $file));
     }
 
-    #[Route(path: '/api/v1/author/book/{id}/publish', methods: ['POST'])]
+    #[Route(path: '/api/v1/author/book/{id}/publish', methods: ['PUT'])]
     #[IsGranted(AuthorBookVoter::IS_AUTHOR, subject: 'id')]
     #[OA\Tag(name: 'Author API')]
     #[OA\Response(response: 200, description: 'Publish a book')]
@@ -74,7 +74,7 @@ class AuthorController extends AbstractController
         return $this->json(null);
     }
 
-    #[Route(path: '/api/v1/author/book/{id}/unpublish', methods: ['POST'])]
+    #[Route(path: '/api/v1/author/book/{id}/unpublish', methods: ['PUT'])]
     #[IsGranted(AuthorBookVoter::IS_AUTHOR, subject: 'id')]
     #[OA\Tag(name: 'Author API')]
     #[OA\Response(response: 200, description: 'Unpublish a book')]
@@ -115,7 +115,7 @@ class AuthorController extends AbstractController
         return $this->json(null);
     }
 
-    #[Route(path: '/api/v1/author/book/{id}', methods: ['POST'])]
+    #[Route(path: '/api/v1/author/book/{id}', methods: ['PUT'])]
     #[IsGranted(AuthorBookVoter::IS_AUTHOR, subject: 'id')]
     #[OA\Tag(name: 'Author API')]
     #[OA\Response(response: 200, description: 'Update a book')]
@@ -149,7 +149,7 @@ class AuthorController extends AbstractController
         return $this->json($this->bookChapterService->createChapter($request, $bookId));
     }
 
-    #[Route(path: '/api/v1/author/book/{bookId}/chapter/{id}/sort', methods: ['POST'])]
+    #[Route(path: '/api/v1/author/book/{bookId}/chapter/{id}/sort', methods: ['PUT'])]
     #[IsGranted(AuthorBookVoter::IS_AUTHOR, subject: 'bookId')]
     #[OA\Tag(name: 'Author API')]
     #[OA\Response(response: 200, description: 'Sort a book chapter')]
@@ -163,7 +163,7 @@ class AuthorController extends AbstractController
         return $this->json(null);
     }
 
-    #[Route(path: '/api/v1/author/book/{bookId}/chapter/{id}', methods: ['POST'])]
+    #[Route(path: '/api/v1/author/book/{bookId}/chapter/{id}', methods: ['PUT'])]
     #[IsGranted(AuthorBookVoter::IS_AUTHOR, subject: 'bookId')]
     #[OA\Tag(name: 'Author API')]
     #[OA\Response(response: 200, description: 'Update a book chapter')]
@@ -221,7 +221,7 @@ class AuthorController extends AbstractController
         return $this->json(null);
     }
 
-    #[Route(path: '/api/v1/author/book/{bookId}/chapter/{chapterId}/content/{id}', methods: ['POST'])]
+    #[Route(path: '/api/v1/author/book/{bookId}/chapter/{chapterId}/content/{id}', methods: ['PUT'])]
     #[IsGranted(AuthorBookVoter::IS_AUTHOR, subject: 'bookId')]
     #[OA\Tag(name: 'Author API')]
     #[OA\Response(response: 200, description: 'Update a book chapter content')]

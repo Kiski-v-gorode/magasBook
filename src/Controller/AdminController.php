@@ -54,7 +54,7 @@ class AdminController extends AbstractController
         return $this->json($this->bookCategoryService->createCategory($request));
     }
 
-    #[Route(path: '/api/v1/admin/bookCategory/{id}', methods: ['POST'])]
+    #[Route(path: '/api/v1/admin/bookCategory/{id}', methods: ['PUT'])]
     #[OA\Tag(name: 'Admin API')]
     #[OA\Response(response: 200, description: 'Update a book category', attachables: [new Model(type: IdResponse::class)])]
     #[OA\Response(response: 400, description: 'Validation failed', attachables: [new Model(type: ErrorResponse::class)])]
